@@ -2,35 +2,49 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
-	
+	Sprite sprite;
+	Texture texture, img;
+	int x = 291;
+
 	@Override
 	public void create () {
+
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-		Gdx.graphics.setWindowedMode(1024, 768);
+		texture = new Texture(Gdx.files.internal("Arkanoid1.png"));
+		img = new Texture(Gdx.files.internal("player.png"));
+		sprite = new Sprite(img);
+		Gdx.graphics.setWindowedMode(600, texture.getHeight()*3);
+	}
+	@Override
+	public void render () {
+		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		//keyboard control
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && sprite.getX() < 555){
+			x+=5;
+		}
+		else if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && sprite.getX() > 25){
+			x-=5;
+		}
+		sprite.setPosition(x,0);
+		batch.begin();
+		batch.draw(texture, 0, 0, 638, 480);
+		//System.out.println(sprite.getX());
+		sprite.draw(batch);
+		batch.end();
 	}
 
 	@Override
-	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		int x = Gdx.input.getX();
-		int y = Gdx.input.getY() - 256;
-		batch.begin();
-		batch.draw(img, x, -y);
-		batch.end();
-	}
-	
-	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
+		texture.dispose();
 	}
 }
