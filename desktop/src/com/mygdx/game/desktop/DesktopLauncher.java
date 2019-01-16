@@ -8,5 +8,9 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new MyGdxGame(), config);
+		config.width = 672;
+		config.height = 768;
+		config.title = "Arkanoid";
+
 	}
 }
