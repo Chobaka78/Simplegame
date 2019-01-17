@@ -39,7 +39,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		//keyboard control
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && sprite.getX() < 582){
-			x+=5;
+			x+=10;
 		}
 		else if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && sprite.getX() > 25){
 			x-=5;
