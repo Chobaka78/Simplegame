@@ -7,6 +7,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Rectangle;
+
+import java.awt.*;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -14,9 +18,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	Sprite ball;
 	Texture texture, img, ballimg;
 	int x = 291;
-	int ballx = 291;
-	int bally = 0;
-	private int balldx = 1;
+	public int ballx;
+	public int bally;
+	private int balldx = -1;
 	private int balldy = -2;
 	public boolean play = false;
 
@@ -48,8 +52,10 @@ public class MyGdxGame extends ApplicationAdapter {
 		if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
 			play = true;
 		}
-		if(play == false){
+		if(play == false){ // ball is on the paddle and game hasn't started yet
 			ball.setPosition(x + 27,10);
+			ballx = x + 27;
+			bally = 10;
 		}else{
 			ballmovement();
 		}
@@ -64,8 +70,14 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 
 	public void ballmovement(){
-		ballx += balldx;
-		bally += balldy;
+
+		Rectangle playerRect = sprite.getBoundingRectangle();
+		Rectangle ballrect = ball.getBoundingRectangle();
+
+		if(play == true && ballrect.overlaps(playerRect)){
+			//balldx = balldx;
+			balldy = -balldy;
+		}
 		if(ballx < 25){
 			balldx = -balldx;
 		}
@@ -73,14 +85,19 @@ public class MyGdxGame extends ApplicationAdapter {
 			balldx = -balldx;
 		}
 		if(bally < 0){
-			balldy = -balldy;
+			if(play == true){
+				play = false;
+			}
 		}
 
 		if(bally > 735){
 			balldy = -balldy;
 		}
 
-		ball.setPosition(ballx,bally);
+		ballx += (balldx*3); //ball direction for x axis (left and right)
+		bally += (balldy*3); // ball direction for y axis (up and down)
+
+		ball.setPosition(ballx,bally); //moving the ball
 
 	}
 
