@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 
+
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Paddle player;
@@ -17,12 +18,14 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture texture;
 	public int x = 291;
 
+
 	@Override
 	public void create () {
 		texture = new Texture(Gdx.files.internal("Arkanoid1.png"));
 		batch = new SpriteBatch();
 		player = new Paddle(x,0);
 		ball = new Ball(player.getX() + 27, 10);
+
 	}
 	@Override
 	public void render () {
