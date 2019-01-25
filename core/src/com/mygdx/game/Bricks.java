@@ -8,8 +8,22 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Bricks {
 
     private int x, y, width, height;
-    
+    private int grid [][];
+
+    public Bricks(int grid [] []){
+
+    }
+
+    public static void load () throws IOException{
+        Scanner kb = new Scanner(new BufferedReader(new FileReader("Map.txt")));
+    }
+
 }
