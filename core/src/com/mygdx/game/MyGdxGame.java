@@ -5,17 +5,22 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
 
 public class MyGdxGame extends ApplicationAdapter {
+	//public static ArrayList<Blocks>allblock= new Arraylist<Blocks>();
+
 	SpriteBatch batch;
 	Paddle player;
 	Ball ball;
 	Texture texture;
 	public int x = 291;
+
+
 
 
 	@Override
@@ -25,15 +30,23 @@ public class MyGdxGame extends ApplicationAdapter {
 		player = new Paddle(x,0);
 		ball = new Ball(player.getX() + 27, 10);
 
+
 	}
 	@Override
 	public void render () {
 
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+
+
+
 		//keyboard control
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.getX() < 582){
 			x +=5;
+
+
+
 		}
 		else if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.getX() > 25){
 			x -=5;
@@ -41,7 +54,9 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		player.setX(x); // set the paddle to centre
 		batch.begin();
+
 		batch.draw(texture,0,0,672,768);
+
 		batch.end();
 		player.render(player.getX(),0);
 		ball.move(); // this will call the move method in the ball class

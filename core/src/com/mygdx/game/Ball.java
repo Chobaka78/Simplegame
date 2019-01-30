@@ -4,6 +4,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -15,6 +16,9 @@ public class Ball {
     static Sprite ball;
     private SpriteBatch batch;
     Paddle player;
+    int score = 0;
+    BitmapFont font;
+
 
     public Ball (int x, int y){
         this.x = x;
@@ -24,12 +28,14 @@ public class Ball {
         img = new Texture(Gdx.files.internal("ball.png"));
         ball = new Sprite(img);
         batch = new SpriteBatch();
+        font = new BitmapFont();
     }
 
     public void render(int x, int y){
         batch.begin();
         ball.setPosition(x,y);
         ball.draw(batch);
+        font.draw(batch, "score = "+ score, 300, 740);
         batch.end();
     }
 
@@ -65,6 +71,9 @@ public class Ball {
 
             if(play && ball.getBoundingRectangle().overlaps(Paddle.player.getBoundingRectangle())){
                 dy = -dy;
+                score+=10;
+
+
             }
 
             if(getX() < 25){
