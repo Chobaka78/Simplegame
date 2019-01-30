@@ -94,6 +94,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <entry file="file://$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/mygdx/game/Paddle.java">
+          <provider selected="true" editor-type-id="text-editor">
             </state>
           </provider>
         </entry>
@@ -161,6 +172,7 @@
         <option value="$PROJECT_DIR$/core/src/com/mygdx/game/Utils.java" />
         <option value="$PROJECT_DIR$/core/src/com/mygdx/game/Ball.java" />
         <option value="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" />
+        <option value="$PROJECT_DIR$/core/src/com/mygdx/game/Ball.java" />
       </list>
     </option>
   </component>
@@ -332,7 +344,10 @@
       <workItem from="1547751033288" duration="665000" />
       <workItem from="1547869833441" duration="169000" />
       <workItem from="1548028215444" duration="13908000" />
-      <workItem from="1548091489162" duration="1295000" />
+      <workItem from="1548091489162" duration="2737000" />
+      <workItem from="1548179958331" duration="18000" />
+      <workItem from="1548311865207" duration="92000" />
+      <workItem from="1548351311275" duration="2036000" />
     </task>
     <task id="LOCAL-00001" summary="Update 6">
       <created>1548046794481</created>
@@ -345,7 +360,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42581000" />
+    <option name="totallyTimeSpent" value="46169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -509,16 +524,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java">
+    <entry file="file://$PROJECT_DIR$/desktop/src/com/mygdx/game/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        <state relative-caret-position="238">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java">
+      <provider selected="true" editor-type-id="text-editor">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -8,12 +8,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 
 
 public class MyGdxGame extends ApplicationAdapter {
-	//public static ArrayList<Blocks>allblock= new Arraylist<Blocks>();
-
 	SpriteBatch batch;
 	Paddle player;
 	Ball ball;
