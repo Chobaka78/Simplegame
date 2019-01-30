@@ -68,6 +68,9 @@ public class Ball {
             }
         }
         if(play){
+            if(Gdx.input.isKeyPressed(Input.Keys.N)){
+                score+= 10;
+            }
 
             if(play && ball.getBoundingRectangle().overlaps(Paddle.player.getBoundingRectangle())){
                 dy = -dy;
@@ -86,7 +89,7 @@ public class Ball {
                 if(play){
                     play = false;
                 }
-            }
+           }
 
             if(getY() > 735){
                 dy = -dy;
