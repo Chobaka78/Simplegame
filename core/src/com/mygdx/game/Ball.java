@@ -75,6 +75,9 @@ public class Ball {
             if(play && ball.getBoundingRectangle().overlaps(Paddle.player.getBoundingRectangle())){
                 dy = -dy;
                 score+=10;
+                ball.setPosition(100,100);
+                play = false;
+
 
 
             }

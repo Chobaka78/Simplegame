@@ -18,7 +18,7 @@ public class powerups {
     public void mag(){
         if(Gdx.input.isKeyPressed(Input.Keys.N)){
             count+=10;
-            ball.setPosition(100,100);
+
 
         }
 
