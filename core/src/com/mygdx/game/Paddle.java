@@ -16,7 +16,7 @@ public class Paddle {
     public Paddle (int x, int y){
         Paddle.x = x;
         Paddle.y = y;
-        Paddle.width = 64;
+        Paddle.width = 500;
         Paddle.height = 12;
         img = new Texture("player.png");
         player = new Sprite(img);

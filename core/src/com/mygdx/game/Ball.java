@@ -18,6 +18,9 @@ public class Ball {
     Paddle player;
     int score = 0;
     BitmapFont font;
+    boolean mag = false;
+    int speedx= 3;
+    int speedy= 3;
 
 
     public Ball (int x, int y){
@@ -68,15 +71,21 @@ public class Ball {
             }
         }
         if(play){
+            if(Gdx.input.isKeyPressed(Input.Keys.B)){
+                speedx = 1;
+                speedy =1;
+            }
+
             if(Gdx.input.isKeyPressed(Input.Keys.N)){
-                score+= 10;
+                mag = true;
+            }
+            if (mag == true &&play && ball.getBoundingRectangle().overlaps(Paddle.player.getBoundingRectangle())) {
+                play = false;
             }
 
             if(play && ball.getBoundingRectangle().overlaps(Paddle.player.getBoundingRectangle())){
                 dy = -dy;
                 score+=10;
-                ball.setPosition(100,100);
-                play = false;
 
 
 
@@ -97,8 +106,8 @@ public class Ball {
             if(getY() > 735){
                 dy = -dy;
             }
-            x += dx*3;
-            y += dy*3;
+            x += dx*speedx;
+            y += dy*speedy;
             render(x, y);
         }
     }
