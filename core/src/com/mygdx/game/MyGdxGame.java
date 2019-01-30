@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 
 public class MyGdxGame extends ApplicationAdapter {
+	//hello world
 	SpriteBatch batch;
 	Paddle player;
 	Ball ball;
